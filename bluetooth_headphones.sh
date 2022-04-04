@@ -6,6 +6,9 @@ CONNECTED=$(bluetoothctl -- info $BLUETOOTH_HEADPHONES_MACADDR | grep Connected)
 CONNECTED="$(echo $CONNECTED | tr -d '\t')"
 
 if [ "$CONNECTED" = "Connected: no" ]; then
+    # Make sure pulseaudio is working
+    pulseaudio --start
+
     pactl loadmodule module-bluetooth-discover
     bluetoothctl -- connect $BLUETOOTH_HEADPHONES_MACADDR
 else
