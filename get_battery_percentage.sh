@@ -6,8 +6,9 @@ BATTERY_PERCENTAGE="${BATTERY_PERCENTAGE%%%}"
 BATTERY_ICON=""
 
 BATTERY_STATUS="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state: | cut -d ':' -f 2 | xargs)"
-
-if [ "$BATTERY_STATUS" == "charging" ]; then
+if [ "$BATTERY_STATUS" == "fully-charged" ]; then
+        BATTERY_ICON=""
+elif [ "$BATTERY_STATUS" == "charging" ]; then
     if [ "$BATTERY_PERCENTAGE" -gt 90 -a "$BATTERY_PERCENTAGE" -le 100 ]; then
         BATTERY_ICON=""
      elif [ "$BATTERY_PERCENTAGE" -gt 75 -a "$BATTERY_PERCENTAGE" -le 90 ]; then
