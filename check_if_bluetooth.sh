@@ -8,6 +8,6 @@ CONNECTED="$(echo $CONNECTED | tr -d '\t')"
 if [ "$CONNECTED" = "Connected: no" ]; then
     echo ""
 else
-    echo ""
+    echo ""
 fi
 
