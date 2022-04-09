@@ -1,10 +1,21 @@
 #!/bin/sh
 
+# Get sound for both left and right 
+SOUND_VOLUME="$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget PCM))"
 
-SOUND_VOLUME="$(awk -F"[][]" '/dB/ { print $2 }' <(amixer sget Master))"
-SOUND_VOLUME="${SOUND_VOLUME%%%}"
+# Split variables
+SOUND_VOLUME_LEFT="$(echo $SOUND_VOLUME | awk '{print $1}')"
+SOUND_VOLUME_RIGHT="$(echo $SOUND_VOLUME | awk '{print $NF}')"
 
+# Remove the % sign
+SOUND_VOLUME_LEFT="${SOUND_VOLUME_LEFT%%%}"
+SOUND_VOLUME_RIGHT="${SOUND_VOLUME_RIGHT%%%}"
+
+# Recombine variables
+SOUND_VOLUME=$(($SOUND_VOLUME_LEFT + $SOUND_VOLUME_RIGHT))
+SOUND_VOLUME=$(($SOUND_VOLUME/2))
 SOUND_ICON=""
+
 if [ "$SOUND_VOLUME" -gt 75 -a "$SOUND_VOLUME" -le 100 ]; then
     SOUND_ICON=""
 elif [ "$SOUND_VOLUME" -gt 50 -a "$SOUND_VOLUME" -le 75 ]; then
