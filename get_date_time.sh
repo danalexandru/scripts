@@ -24,5 +24,5 @@ DATE="$(date '+%a %d %b %Y')"
 TIME="$(date '+%H:%M:%S')"
 
 SEPARATOR="|"
-echo "$DATE_ICON  $DATE $SEPARATOR $TIME_ICON $TIME"
+echo "$DATE_ICON $DATE $SEPARATOR $TIME_ICON $TIME"
 

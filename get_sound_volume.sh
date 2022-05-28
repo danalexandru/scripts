@@ -22,8 +22,10 @@ elif [ "$SOUND_VOLUME" -gt 50 -a "$SOUND_VOLUME" -le 75 ]; then
     SOUND_ICON="墳"
 elif [ "$SOUND_VOLUME" -gt 25 -a "$SOUND_VOLUME" -le 50 ]; then
     SOUND_ICON="奔"
-else
+elif [ "$SOUND_VOLUME" -gt 0 -a "$SOUND_VOLUME" -le 25 ]; then
     SOUND_ICON="奄"
+else
+    SOUND_ICON="婢"
 fi
 
 echo "$SOUND_ICON $SOUND_VOLUME%"

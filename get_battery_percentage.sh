@@ -7,7 +7,7 @@ BATTERY_IS_PLUGGED_ICON=""
 BATTERY_ICON=""
 
 BATTERY_STATUS="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state: | cut -d ':' -f 2 | xargs)"
-if [[ "$BATTERY_STATUS" == "charging" || "$BATTERY_STATUS" == "fully-charged" ]]; then
+if [[ "$BATTERY_STATUS" == "charging" || "$BATTERY_STATUS" == "pending-charge" || "$BATTERY_STATUS" == "fully-charged" ]]; then
     BATTERY_IS_PLUGGED_ICON="ﮣ"
 elif [ "$BATTERY_STATUS" == "discharging" ]; then
     BATTERY_IS_PLUGGED_ICON="ﮤ"

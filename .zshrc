@@ -44,3 +44,4 @@ fi
 
 chpwd() {exec zsh}
 
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
