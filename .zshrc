@@ -42,6 +42,19 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
+# Add directories to path
+SCRIPTS_DIR="/home/aldan/.config/scripts"
+HOME_BIN="/home/aldan/bin"
+PATH=$PATH:$SCRIPTS_DIR:$HOME_BIN
+
+# Configure Kubernetes autocomplete
+source <(kubectl completion zsh)
+#complete -F __start_kubectl kc
+
+# exports
+export KUBE_EDITOR=nvim
+
+
 chpwd() {exec zsh}
 
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
