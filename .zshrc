@@ -58,8 +58,12 @@ source <(kubectl completion zsh)
 export KUBE_EDITOR=nvim
 
 
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 chpwd() {exec zsh}
 
+# source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
