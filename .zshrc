@@ -54,9 +54,11 @@ PATH=$PATH:$SCRIPTS_DIR:$HOME_BIN
 source <(kubectl completion zsh)
 #complete -F __start_kubectl kc
 
+alias grep="grep --color=auto"
+alias ls="colorls"
+# alias ls="lsd"
 # exports
 export KUBE_EDITOR=nvim
-
 
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
@@ -66,4 +68,5 @@ chpwd() {exec zsh}
 # source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
