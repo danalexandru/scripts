@@ -48,15 +48,17 @@ fi
 # Add directories to path
 SCRIPTS_DIR="/home/aldan/.config/scripts"
 HOME_BIN="/home/aldan/bin"
-PATH=$PATH:$SCRIPTS_DIR:$HOME_BIN
+RUBY_BIN="/home/aldan/.local/share/gem/ruby/3.0.0/bin"
+PATH=$PATH:$SCRIPTS_DIR:$HOME_BIN:$RUBY_BIN
 
 # Configure Kubernetes autocomplete
-source <(kubectl completion zsh)
-#complete -F __start_kubectl kc
+# source <(kubectl completion zsh)
+# complete -F __start_kubectl kc
 
 alias grep="grep --color=auto"
 alias ls="colorls"
 # alias ls="lsd"
+#
 # exports
 export KUBE_EDITOR=nvim
 
@@ -69,4 +71,6 @@ chpwd() {exec zsh}
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source ~/.config/zsh/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+source ~/.manpage.sh
 
