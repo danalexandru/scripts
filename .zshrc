@@ -4,20 +4,20 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 autoload -U compinit
 
-# precmd() { vcs_info }
+# git_branch() {
+#     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+# }
 # 
-# # Format the vcs_info_msg_0_ variable
-# zstyle ':vcs_info:*' enable git svn
-# zstyle ':vcs_info:git:*' formats '%b'
+# PROMPT="%B%{$fg[green]%}[%n%{$fg[yellow]%}@%{$fg[cyan]%}%m:%{$fg[red]%}%c %{$fg[magenta]%}($(git_branch))%f%{$fg[green]%}] %{$fg[yellow]%}%% %{$reset_color%}%b"
 
-# setopt PROMPT_SUBST
-# PROMPT="%B%{$fg[green]%}[%n%{$fg[yellow]%}@%{$fg[cyan]%}%m:%{$fg[red]%}%c %{$fg[magenta]%}(${vcs_info_msg_0_})%{$fg[green]%}] %{$fg[yellow]%}%% %{$reset_color%}%b"
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats "%b"
 
-git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
-}
+precmd() { vcs_info }
+setopt prompt_subst
 
-PROMPT="%B%{$fg[green]%}[%n%{$fg[yellow]%}@%{$fg[cyan]%}%m:%{$fg[red]%}%c %{$fg[magenta]%}%F{201}($(git_branch))%f%{$fg[green]%}] %{$fg[yellow]%}%% %{$reset_color%}%b"
+PROMPT='%B%{$fg[green]%}[%n%{$fg[yellow]%}@%{$fg[cyan]%}%m:%{$fg[red]%}%c %{$fg[magenta]%}(${vcs_info_msg_0_})%f%{$fg[green]%}] %{$fg[yellow]%}%% %{$reset_color%}%b'
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -65,7 +65,7 @@ export KUBE_EDITOR=nvim
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
-chpwd() {exec zsh}
+# chpwd() {exec zsh}
 
 # source ~/.config/zsh/zsh-vi-mode/zsh-vi-mode.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
