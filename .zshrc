@@ -27,7 +27,7 @@ bindkey -e
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/aldan/.zshrc'
+zstyle :compinstall filename '${HOME}/.zshrc'
 
 # Basic auto/tab complete:
 zstyle ':completion:*' menu select
@@ -46,21 +46,25 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Add directories to path
-SCRIPTS_DIR="/home/aldan/.config/scripts"
-HOME_BIN="/home/aldan/bin"
-RUBY_BIN="/home/aldan/.local/share/gem/ruby/3.0.0/bin"
-PATH=$PATH:$SCRIPTS_DIR:$HOME_BIN:$RUBY_BIN
+SCRIPTS_DIR="${HOME}/.config/scripts"
+HOME_BIN="${HOME}/bin"
+RUBY_BIN="${HOME}/.local/share/gem/ruby/3.0.0/bin"
+GO_BIN="${HOME}/go/bin"
+PATH=$PATH:$SCRIPTS_DIR:$HOME_BIN:$RUBY_BIN:$GO_BIN
+
 
 # Configure Kubernetes autocomplete
 # source <(kubectl completion zsh)
 # complete -F __start_kubectl kc
 
 alias grep="grep --color=auto"
-alias ls="colorls"
+# alias ls="colorls"
 # alias ls="lsd"
 #
 # exports
 export KUBE_EDITOR=nvim
+export VISUAL=nvim
+export EDITOR=nvim
 
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
