@@ -3,7 +3,7 @@
 # This script will be used in order to recompile the suckless software installed on the system, in case of a OS reinstall
 
 # Specify the user (this script will be run as root => you need the absolute path to the suckless locations
-HOMEDIR="/home/REPLACEME"
+HOMEDIR="/home/aldan"
 
 
 echo "Set up dwm"
