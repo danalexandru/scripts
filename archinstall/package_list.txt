@@ -1,4 +1,7 @@
 grub
+dosfstools
+os-prober
+mtools
 vim
 neovim
 xdg-user-dirs
@@ -51,6 +54,7 @@ deluge
 deluge-gtk
 libreoffice-still
 ranger
+highlight
 mpv
 docker
 qt5ct
@@ -71,3 +75,10 @@ mutter
 mtpfs
 gvfs-mtp
 gvfs-gphoto2
+gtk-engine
+gtk-engine-murrine
+engrampa
+cronie
+wpa_supplicant
+dialog
+polkit
