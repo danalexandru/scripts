@@ -31,6 +31,7 @@ ntfs-3g
 lxappearance
 mesa
 nvidia
+nvidia-lts
 nvidia-utils
 nvidia-settings
 nvidia-prime
@@ -82,3 +83,4 @@ cronie
 wpa_supplicant
 dialog
 polkit
+intel-ucode

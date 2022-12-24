@@ -7,3 +7,4 @@ systemctl enable cups.service
 systemctl enable sshd
 systemctl enable cronie
 systemctl enable cronie.service
+systemctl enable systemd-timesyncd
