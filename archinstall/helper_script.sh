@@ -74,6 +74,9 @@ for flag in "$@"; do
         --copy-themes-and-icons)
             copy_themes_and_icons
             ;;
+        --change-shell)
+            change_shell_to_zsh
+            ;;
         *)
             echo "Unrecognized flag \"$flag\"."
             return

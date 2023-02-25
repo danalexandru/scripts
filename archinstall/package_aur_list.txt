@@ -15,3 +15,5 @@ kubectl-bin
 lf
 sleek
 jmtpfs
+timeshift
+xkblayout-state-git

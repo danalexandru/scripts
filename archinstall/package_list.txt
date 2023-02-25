@@ -30,6 +30,7 @@ bridge-utils
 ntfs-3g
 lxappearance
 mesa
+ mesa
 nvidia
 nvidia-lts
 nvidia-utils
@@ -84,3 +85,7 @@ wpa_supplicant
 dialog
 polkit
 intel-ucode
+w3m
+iw
+dunst
+libnotify
