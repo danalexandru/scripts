@@ -17,3 +17,4 @@ sleek
 jmtpfs
 timeshift
 xkblayout-state-git
+webex-bin

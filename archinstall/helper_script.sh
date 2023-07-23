@@ -11,7 +11,7 @@ install_regular_packages() {
 
 install_aur_packages() {
     echo "Install aur packages from package_aur_list.txt"
-    pacman -S --noconfirm - < package_aur_list.txt
+    paru -S - < package_aur_list.txt
 }
 
 setup_user() {

@@ -1,4 +1,3 @@
-grub
 dosfstools
 os-prober
 mtools
@@ -17,7 +16,6 @@ blueman
 cups
 hplip
 alsa-utils
-pulseaudio
 bash-completion
 openssh
 rsync
@@ -30,9 +28,6 @@ bridge-utils
 ntfs-3g
 lxappearance
 mesa
- mesa
-nvidia
-nvidia-lts
 nvidia-utils
 nvidia-settings
 nvidia-prime
@@ -41,6 +36,7 @@ alacritty
 xterm
 arandr
 xcompmgr
+dash
 zsh
 discord
 flameshot
@@ -59,6 +55,7 @@ ranger
 highlight
 mpv
 docker
+docker-buildx
 qt5ct
 make
 gimp
@@ -67,7 +64,6 @@ breeze-gtk
 xorg-server
 xorg-xinit
 xdotool
-texlive-most
 cmatrix
 cheese
 aisleriot
@@ -77,7 +73,6 @@ mutter
 mtpfs
 gvfs-mtp
 gvfs-gphoto2
-gtk-engine
 gtk-engine-murrine
 engrampa
 cronie
@@ -89,3 +84,9 @@ w3m
 iw
 dunst
 libnotify
+rofi
+minikube
+texlive
+texlive-binextra
+qtile
+awesome

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # dmenu theming
 lines="-l 20"
@@ -28,23 +28,10 @@ else
     esac
 fi
 
-selected="$(ps -a -u $USER | \
-            # dmenu -i -p "Type to search and select process to kill" \
-            dmenu -p "Type to search and select process to kill:" \
-            $lines $options | \
-            awk '{print $1" "$4}')"; 
+emoji_list_path="${HOME}/.config/scripts/dmenu/emoji_list"
+grep -v "#" $emoji_list_path | dmenu -p "pick emoji:" \
+    $lines $options | awk '{print $1}' | tr -d '\n' | xclip -selection clipboard;
 
-if [[ ! -z $selected ]]; then
-
-    answer="$(echo -e "Yes\nNo" | \
-            # dmenu -i -p "$selected will be killed, are you sure?" \
-            dmenu -p "$selected will be killed, are you sure?" \
-            $lines $options )"
-
-    if [[ $answer == "Yes" ]]; then
-        selpid="$(awk '{print $1}' <<< $selected)"; 
-        kill -9 $selpid
-    fi
+if [ -n "$(xclip -o -selection clipboard)" ]; then
+notify-send "Emoji copied" "$(xclip -o -selection clipboard) successfully copied!" --icon=dialog-information;
 fi
-
-exit 0
