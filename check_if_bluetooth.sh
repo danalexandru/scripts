@@ -5,7 +5,7 @@ CONNECTED=$(bluetoothctl -- info $BLUETOOTH_HEADPHONES_MACADDR | grep Connected)
 
 CONNECTED="$(echo $CONNECTED | tr -d '\t')"
 
-if [ "$CONNECTED" = "Connected: no" ]; then
+if  [ -z "$CONNECTED" ] || [ "$CONNECTED" = "Connected: no" ]; then
     echo ""
 else
     echo ""

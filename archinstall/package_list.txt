@@ -28,9 +28,11 @@ bridge-utils
 ntfs-3g
 lxappearance
 mesa
+nvidia-dkms
 nvidia-utils
 nvidia-settings
 nvidia-prime
+lib32-nvidia-utils
 minidlna
 alacritty
 xterm
@@ -90,3 +92,15 @@ texlive
 texlive-binextra
 qtile
 awesome
+grc
+texlive-latexrecommended
+texlive-latexextra
+texlive-lang
+texlive-fontsrecommended
+zoxide
+vulkan-icd-loader
+lib32-vulkan-icd-loader
+hyprland
+hyprpaper
+hypridle
+hyprlock

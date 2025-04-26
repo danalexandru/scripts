@@ -23,6 +23,9 @@ else
         --vscode)
             options="$font -nb #2a2e32 -nf #eff0f1 -sb #3daee9 -sf #eff0f1"
             ;;
+        --ayu)
+            options="$font -nb #0a0b11 -nf #f3f3f6 -sb #1c1e29 -sf #ffbf00"
+            ;;
         *)
             printf "Unknown Argument $1; Expected one of the following:\n\t--default\n\t--doom-one\n\t--gruvbox\n"
     esac
@@ -31,7 +34,7 @@ fi
 emoji_list_path="${HOME}/.config/scripts/dmenu/emoji_list"
 grep -v "#" $emoji_list_path | dmenu -p "pick emoji:" \
     $lines $options | awk '{print $1}' | tr -d '\n' | xclip -selection clipboard;
-
+# grep -v "#" emoji_list | dmenu -i -l 20 | awk '{print $1}' | tr -d '\n' | xclip -selection clipboard
 if [ -n "$(xclip -o -selection clipboard)" ]; then
 notify-send "Emoji copied" "$(xclip -o -selection clipboard) successfully copied!" --icon=dialog-information;
 fi

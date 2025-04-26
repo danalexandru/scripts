@@ -23,6 +23,9 @@ else
         --vscode)
             options="$font -nb #2a2e32 -nf #eff0f1 -sb #3daee9 -sf #eff0f1"
             ;;
+        --ayu)
+            options="$font -nb #0a0b11 -nf #f3f3f6 -sb #1c1e29 -sf #ffbf00"
+            ;;
         *)
             printf "Unknown Argument $1; Expected one of the following:\n\t--default\n\t--doom-one\n\t--gruvbox\n"
     esac

@@ -11,15 +11,21 @@ install_regular_packages() {
 
 install_aur_packages() {
     echo "Install aur packages from package_aur_list.txt"
-    paru -S - < package_aur_list.txt
+    # paru -S - < package_aur_list.txt
+    while IFS= read -r line
+    do
+      echo "${line}"
+      paru -S "{$line}" || continue
+    done < package_aur_list.txt
 }
 
 setup_user() {
     echo "Setup user"
-    # useradd -m -g users -G wheel ${USER}
-    useradd -m ${USER}
-    passwd ${USER}
-
+    if ! id "${USER}" >/dev/null 2>&1; then
+       # useradd -m -g users -G wheel ${USER}
+       useradd -m ${USER}
+       passwd ${USER}
+    fi
     usermod -aG wheel,audio,video,optical,storage ${USER}
 }
 
@@ -33,6 +39,7 @@ systemd_enable () {
     systemctl enable cronie
     systemctl enable cronie.service
     systemctl enable systemd-timesyncd
+    systemctl disable NetworkManager-wait-online.service
 }
 
 configure_grub () {

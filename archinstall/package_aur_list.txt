@@ -3,12 +3,12 @@ ttf-font-awesome
 ttf-hack-nerd
 ttf-joypixels
 ttf-ms-fonts
-nodejs-emojione
 ttf-monaco
+otf-monego-git
 brave-bin
 visual-studio-code-bin
 sublime-text-4
-whatsapp-nativefier
+whatsdesk-bin
 ttf-symbola
 teams
 kubectl-bin
@@ -18,3 +18,5 @@ jmtpfs
 timeshift
 xkblayout-state-git
 webex-bin
+gimp-plugin-gmic
+pyprland
