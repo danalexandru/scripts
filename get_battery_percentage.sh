@@ -6,11 +6,12 @@ BATTERY_PERCENTAGE="${BATTERY_PERCENTAGE%%%}"
 BATTERY_IS_PLUGGED_ICON=""
 BATTERY_ICON=""
 
-BATTERY_STATUS="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state: | cut -d ':' -f 2 | xargs)"
+# BATTERY_STATUS="$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state: | cut -d ':' -f 2 | xargs)"
+BATTERY_STATUS="$(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep state: | cut -d ':' -f 2 | xargs)"
 if [[ "$BATTERY_STATUS" == "charging" || "$BATTERY_STATUS" == "pending-charge" || "$BATTERY_STATUS" == "fully-charged" ]]; then
-    BATTERY_IS_PLUGGED_ICON="ﮣ"
+    BATTERY_IS_PLUGGED_ICON="󰚥"
 elif [ "$BATTERY_STATUS" == "discharging" ]; then
-    BATTERY_IS_PLUGGED_ICON="ﮤ"
+    BATTERY_IS_PLUGGED_ICON="󰚦"
 else
     echo " Unknown status \"$BATTERY_STATUS\"."
     exit 1
